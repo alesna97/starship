@@ -24,6 +24,8 @@ export default {
   },
   methods: {
     toggleSearch() {
+      if (!this.showSearch) this.$refs.inputSearch.focus();
+
       this.showSearch = !this.showSearch;
     },
     handleChange(e) {
@@ -58,6 +60,7 @@ export default {
 
     <div class="w-full absolute top-[70px] left-0 flex justify-center">
       <input
+        :ref="'inputSearch'"
         type="text"
         class="w-11/12 outline-none rounded-md px-4 transition-all delay-75 shadow-md"
         v-bind:class="{
