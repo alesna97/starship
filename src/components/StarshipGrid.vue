@@ -19,7 +19,7 @@ export default {
       <StarshipCardVue
         v-bind:url="item.url"
         v-bind:name="item.name"
-        v-bind:starshipClass="item.starship_class"
+        v-bind:model="item.model"
         v-bind:passenger="item.passengers"
         v-bind:rating="item.hyperdrive_rating"
       />

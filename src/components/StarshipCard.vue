@@ -17,7 +17,7 @@ export default {
       type: String,
       default: "",
     },
-    starshipClass: {
+    model: {
       type: String,
       default: "",
     },
@@ -67,7 +67,7 @@ export default {
     <span
       class="text-center text-xs text-gray-400 flex justify-center line-clamp-1"
     >
-      {{ starshipClass }}
+      {{ model }}
     </span>
     <span
       class="text-secondary font-bold text-center h-[56px] flex justify-center text-base"

@@ -62,7 +62,7 @@ export default {
         @click="onClickBack"
       />
       <h1 class="ml-4 text-lg text-white font-bold">
-        {{ starship.data?.model }}
+        {{ starship.data?.name }}
       </h1>
     </div>
 
@@ -73,7 +73,7 @@ export default {
         <img src="@/assets/spaceship.png" height="64" width="64" />
       </div>
       <div class="flex flex-col items-center mt-2">
-        <span class="text-gray-100">{{ starship.data.starship_class }}</span>
+        <span class="text-gray-100">{{ starship.data.model }}</span>
         <span class="text-white font-bold text-xl">
           {{ starship.data.name }}
         </span>
@@ -98,6 +98,12 @@ export default {
         <span class="text-gray-500 text-sm">Manufacturer</span>
         <span class="text-secondary font-bold">
           {{ starship.data.manufacturer }}
+        </span>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-gray-500 text-sm">Class</span>
+        <span class="text-secondary font-bold">
+          {{ starship.data.starship_class }}
         </span>
       </div>
 
