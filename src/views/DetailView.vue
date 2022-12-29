@@ -6,6 +6,7 @@ import {
   StarIcon,
 } from "@heroicons/vue/24/solid";
 import { RocketLaunchIcon } from "@heroicons/vue/24/outline";
+import SpecificationCard from "@/components/SpecificationCard.vue";
 
 export default {
   components: {
@@ -13,6 +14,7 @@ export default {
     RocketLaunchIcon,
     UserGroupIcon,
     StarIcon,
+    SpecificationCard,
   },
   data() {
     return {
@@ -102,57 +104,36 @@ export default {
       <hr class="my-4" />
 
       <span class="text-gray-500 text-sm">Specification</span>
+
       <div class="flex justify-between gap-2">
-        <div
-          class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-        >
-          <span class="text-gray-500 text-sm">Consumables</span>
-          <span class="text-secondary font-bold">
-            {{ starship.data.consumables }}
-          </span>
-        </div>
-        <div
-          class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-        >
-          <span class="text-gray-500 text-sm">Crew</span>
-          <span class="text-secondary font-bold">
-            {{ starship.data.crew }}
-          </span>
-        </div>
-        <div
-          class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-        >
-          <span class="text-gray-500 text-sm">Length</span>
-          <span class="text-secondary font-bold">
-            {{ starship.data.length }}
-          </span>
-        </div>
+        <SpecificationCard
+          v-bind:title="'Consumables'"
+          v-bind:value="starship.data.consumables"
+        />
+        <SpecificationCard
+          v-bind:title="'Crew'"
+          v-bind:value="starship.data.crew"
+        />
+        <SpecificationCard
+          v-bind:title="'Length'"
+          v-bind:value="starship.data.length"
+        />
       </div>
-      <div
-        class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-      >
-        <span class="text-gray-500 text-sm">Max Atmosphering Speed</span>
-        <span class="text-secondary font-bold">
-          {{ starship.data.max_atmosphering_speed }}
-        </span>
-      </div>
+
+      <SpecificationCard
+        v-bind:title="'Max Atmosphering Speed'"
+        v-bind:value="starship.data.max_atmosphering_speed"
+      />
+
       <div class="flex justify-between gap-2">
-        <div
-          class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-        >
-          <span class="text-gray-500 text-sm">Cost in Credits</span>
-          <span class="text-secondary font-bold">
-            {{ starship.data.cost_in_credits }}
-          </span>
-        </div>
-        <div
-          class="flex flex-col flex-1 shadow-md rounded-md p-2 border-b-4 border-b-primary"
-        >
-          <span class="text-gray-500 text-sm">Cargo Capacity</span>
-          <span class="text-secondary font-bold">
-            {{ starship.data.cargo_capacity }}
-          </span>
-        </div>
+        <SpecificationCard
+          v-bind:title="'Cost in Credits'"
+          v-bind:value="starship.data.cost_in_credits"
+        />
+        <SpecificationCard
+          v-bind:title="'Cargo Capacity'"
+          v-bind:value="starship.data.cargo_capacity"
+        />
       </div>
     </div>
   </div>
