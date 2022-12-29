@@ -1,6 +1,7 @@
 <script>
 import { RocketLaunchIcon } from "@heroicons/vue/24/outline";
 import { UserGroupIcon, StarIcon } from "@heroicons/vue/24/solid";
+
 export default {
   components: {
     RocketLaunchIcon,
@@ -8,6 +9,10 @@ export default {
     StarIcon,
   },
   props: {
+    url: {
+      type: String,
+      default: "",
+    },
     name: {
       type: String,
       default: "",
@@ -23,6 +28,11 @@ export default {
     rating: {
       type: String,
       default: "",
+    },
+  },
+  methods: {
+    onClickDetail() {
+      this.$router.push(`/${this.$props.url.split("/")[5]}`);
     },
   },
 };
@@ -54,7 +64,9 @@ export default {
         />
       </div>
     </div>
-    <span class="text-center text-xs text-gray-400 flex justify-center">
+    <span
+      class="text-center text-xs text-gray-400 flex justify-center line-clamp-1"
+    >
       {{ starshipClass }}
     </span>
     <span
@@ -65,6 +77,7 @@ export default {
     <button
       type="button"
       class="bg-primary rounded-md shadow-md outline-none border-none text-white w-full p-2 hover:bg-gray-300 hover:text-white flex items-center justify-center font-bold"
+      @click="onClickDetail"
     >
       <RocketLaunchIcon class="text-white mr-2 h-5 w-5" /> View
     </button>

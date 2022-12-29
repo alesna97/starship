@@ -17,6 +17,7 @@ export default {
   <div class="flex w-full flex-wrap">
     <div v-for="(item, index) in data" :key="index" class="w-1/2 p-2">
       <StarshipCardVue
+        v-bind:url="item.url"
         v-bind:name="item.name"
         v-bind:starshipClass="item.starship_class"
         v-bind:passenger="item.passengers"
